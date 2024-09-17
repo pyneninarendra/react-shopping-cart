@@ -1,8 +1,16 @@
 
 function App() {
   return (
-    <div className="App">
-      <h3>Initial App</h3>
+    <div className="grid-container">
+      <header>
+        <a href="/">React Shopping Cart</a>
+      </header>
+      <main>
+        Products List
+      </main>
+      <footer>
+        All rights reserved, 2024
+      </footer>
     </div>
   );
 }
