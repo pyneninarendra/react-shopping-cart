@@ -1,57 +1,148 @@
 @font-face {
-    font-family: Raleway;
-    src: url(./../public/fonts/Raleway-Regular.ttf) format('ttf');
+  font-family: Raleway;
+  src: url(./../public/fonts/Raleway-Regular.ttf) format("ttf");
 }
 
 html {
-    font-size: 62.5%;
-    box-sizing: border-box;
+  font-size: 62.5%;
+  box-sizing: border-box;
 }
 
-body, #root {
-    height: 100vh;
-    margin: 0;
-    font-family: 'Raleway', 'Helvetica', Arial, sans-serif;
+body,
+#root {
+  height: 100vh;
+  margin: 0;
+  font-family: "Raleway", "Helvetica", Arial, sans-serif;
 }
 
-body, label, input, textarea, select, button {
-    font-size: 1.6rem;
-    letter-spacing: 0.048rem;
+body,
+label,
+input,
+textarea,
+select,
+button {
+  font-size: 1.6rem;
+  letter-spacing: 0.048rem;
 }
 
 .grid-container {
-    height: 100%;
-    display: grid;
-    grid-template-rows: 5rem 1fr 5rem;
-    grid-template-columns: 1fr;
-    grid-template-areas: "header" "main" "footer";
+  height: 100%;
+  display: grid;
+  grid-template-rows: 5rem 1fr 5rem;
+  grid-template-columns: 1fr;
+  grid-template-areas: "header" "main" "footer";
 }
 
 header {
-    display: flex;
-    grid-area: header;
-    align-items: center;
-    justify-content: flex-start;
-    background-color: #203040;
-    color: #fff;
-    padding-left: 0.5rem;
+  display: flex;
+  grid-area: header;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #203040;
+  color: #fff;
+  padding-left: 0.5rem;
 }
 
-header a, header a:link, header a:active, header a:focus, header a:visited, header a:hover {
-    color: #fff;
-    text-decoration: none;
+header a,
+header a:link,
+header a:active,
+header a:focus,
+header a:visited,
+header a:hover {
+  color: #fff;
+  text-decoration: none;
 }
 
 main {
-    grid-area: main;
-    padding: 1rem;
+  grid-area: main;
 }
 
 footer {
-    grid-area: footer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #203040;
-    color: #fff;
+  grid-area: footer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #203040;
+  color: #fff;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
+.main {
+  flex: 3 60rem;
+}
+.sidebar {
+  flex: 1 20rem;
+}
+
+/* Products */
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.products li {
+  flex: 0 1 30rem;
+  height: 47rem;
+  padding: 1rem;
+}
+
+.products li a,
+.products li a:hover,
+.products li a:active,
+.products li a:link,
+.products li a:visited,
+.products li a:focus {
+  text-decoration: none;
+  color: #203040;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.product img {
+  max-width: 30rem;
+  max-height: 30rem;
+}
+
+.product-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-price div,
+.product-price button {
+  text-align: center;
+  flex: 1;
+}
+
+.product-price div {
+  font-size: 2rem;
+}
+
+.button {
+  padding: 1rem;
+  border: 0.1rem solid #c0c0c0;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.button:hover {
+  border-color: #808080;
+}
+
+.button.primary {
+  background-color: #f0c040;
 }
