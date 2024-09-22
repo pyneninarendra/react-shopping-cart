@@ -213,3 +213,22 @@ footer {
 .total div {
   font-size: 2rem;
 }
+
+/* Checout */
+
+.formContainer {
+  list-style-type: none;
+  width: 100%;
+  padding: 0;
+}
+
+.formContainer li {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.formContainer li input {
+  padding: 1rem;
+  border: 0.1rem solid #c0c0c0;
+}
