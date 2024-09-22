@@ -11,7 +11,9 @@ export class App extends Component {
 
     this.state = {
       products: products.products,
-      cartItems: [],
+      cartItems: localStorage.getItem("cartItems")
+        ? JSON.parse(localStorage.getItem("cartItems"))
+        : [],
       size: "",
       sorts: "",
     };
@@ -68,11 +70,20 @@ export class App extends Component {
       cartItems.push({ ...product, count: 1 });
     }
     this.setState({ cartItems });
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
   };
 
   removeItem = (num) => {
     const cartItems = this.state.cartItems.filter((item) => item.id !== num);
-    this.setState({ cartItems });
+    this.setState({
+      cartItems: this.state.cartItems.filter((item) => item.id !== num),
+    });
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  };
+
+  createOrder = (order) => {
+    console.log(order);
+    alert(`Need to save order from ${order.name}`);
   };
 
   render() {
@@ -100,6 +111,7 @@ export class App extends Component {
               <Cart
                 cartItems={this.state.cartItems}
                 removeItem={this.removeItem}
+                createOrder={this.createOrder}
               />
             </div>
           </div>
